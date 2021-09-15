@@ -1,20 +1,22 @@
-using CustomBackgroundService.Infrastructure;
-using CustomBackgroundService.Services;
+using Hangfire;
+using Hangfire.MemoryStorage;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace CustomBackgroundService
+namespace HangfireService
 {
     public class Startup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<BackgroundWorkerQueue>();
-            services.AddHostedService<LongRunningService>();
+            services.AddHangfire(cfg =>
+            {
+                cfg.UseMemoryStorage();
+            });
+            services.AddHangfireServer();
             services.AddControllers();
         }
 
@@ -25,10 +27,10 @@ namespace CustomBackgroundService
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseRouting();
 
-            app.UseEndpoints(endpoints => endpoints.MapControllers());
+            app.UseEndpoints(endpoints =>  endpoints.MapControllers());
         }
     }
 }
