@@ -30,7 +30,12 @@ namespace ASP.NET.BackgroundTask
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context => { await context.Response.WriteAsync("Hello World!"); });
+                endpoints.MapGet("/",
+                    async context =>
+                    {
+                        await Task.Delay(2000);
+                        await context.Response.WriteAsync("Hello World!");
+                    });
             });
         }
     }
