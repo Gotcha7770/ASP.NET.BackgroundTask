@@ -1,4 +1,3 @@
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 using CustomBackgroundService.Infrastructure;
@@ -22,18 +21,13 @@ namespace CustomBackgroundService.Controllers
 
         public IActionResult Index()
         {
-            //LongRunningTask();
-            _backgroundWorkerQueue.QueueBackgroundWorkItem(async token =>
-            {
-                await Task.Delay(2000, token);
-                _logger.LogInformation($"Completed at {DateTime.UtcNow.TimeOfDay}");
-            });
+            _backgroundWorkerQueue.QueueBackgroundWorkItem(LongRunningTask);
             return Ok();
         }
 
-        private void LongRunningTask()
+        private async Task LongRunningTask(CancellationToken token)
         {
-            Thread.Sleep(2000);
+            await Task.Delay(2000, token);
             _logger.LogInformation("Task completed!");
         }
     }
