@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ASP.NET.BackgroundTask.Infrastructure
+namespace CustomBackgroundService.Infrastructure
 {
     public class BackgroundWorkerQueue
     {

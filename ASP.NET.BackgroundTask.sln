@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NET.BackgroundTask", "ASP.NET.BackgroundTask\ASP.NET.BackgroundTask.csproj", "{F5D41578-C3B3-4F5F-8D89-52DD76FE55EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomBackgroundService", "CustomBackgroundService\CustomBackgroundService.csproj", "{F5D41578-C3B3-4F5F-8D89-52DD76FE55EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

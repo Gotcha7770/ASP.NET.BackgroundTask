@@ -1,9 +1,9 @@
 using System.Threading;
 using System.Threading.Tasks;
-using ASP.NET.BackgroundTask.Infrastructure;
+using CustomBackgroundService.Infrastructure;
 using Microsoft.Extensions.Hosting;
 
-namespace ASP.NET.BackgroundTask.Services
+namespace CustomBackgroundService.Services
 {
     public class LongRunningService : BackgroundService
     {

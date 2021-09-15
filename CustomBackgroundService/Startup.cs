@@ -1,11 +1,11 @@
-using ASP.NET.BackgroundTask.Infrastructure;
-using ASP.NET.BackgroundTask.Services;
+using CustomBackgroundService.Infrastructure;
+using CustomBackgroundService.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace ASP.NET.BackgroundTask
+namespace CustomBackgroundService
 {
     public class Startup
     {

@@ -1,11 +1,11 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using ASP.NET.BackgroundTask.Infrastructure;
+using CustomBackgroundService.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace ASP.NET.BackgroundTask.Controllers
+namespace CustomBackgroundService.Controllers
 {
     [Controller]
     [Route("/")]
