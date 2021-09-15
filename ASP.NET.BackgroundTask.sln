@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireService", "Hangfire
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuarzNetService", "QuarzNetService\QuarzNetService.csproj", "{EA7730F2-4E37-429E-B993-B38FE0093390}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoravelService", "CoravelService\CoravelService.csproj", "{F4E083AD-5006-4B86-87DD-83E8CE4512A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{EA7730F2-4E37-429E-B993-B38FE0093390}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA7730F2-4E37-429E-B993-B38FE0093390}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA7730F2-4E37-429E-B993-B38FE0093390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E083AD-5006-4B86-87DD-83E8CE4512A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4E083AD-5006-4B86-87DD-83E8CE4512A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E083AD-5006-4B86-87DD-83E8CE4512A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4E083AD-5006-4B86-87DD-83E8CE4512A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
