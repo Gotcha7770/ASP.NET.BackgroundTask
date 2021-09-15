@@ -1,4 +1,7 @@
+using System;
 using System.Threading;
+using System.Threading.Tasks;
+using ASP.NET.BackgroundTask.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -8,16 +11,23 @@ namespace ASP.NET.BackgroundTask.Controllers
     [Route("/")]
     public class HomeController : Controller
     {
+        private readonly BackgroundWorkerQueue _backgroundWorkerQueue;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(BackgroundWorkerQueue backgroundWorkerQueue, ILogger<HomeController> logger)
         {
+            _backgroundWorkerQueue = backgroundWorkerQueue;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            LongRunningTask();
+            //LongRunningTask();
+            _backgroundWorkerQueue.QueueBackgroundWorkItem(async token =>
+            {
+                await Task.Delay(2000, token);
+                _logger.LogInformation($"Completed at {DateTime.UtcNow.TimeOfDay}");
+            });
             return Ok();
         }
 
